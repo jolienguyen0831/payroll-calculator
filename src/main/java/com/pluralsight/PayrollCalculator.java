@@ -16,6 +16,15 @@ public class PayrollCalculator {
 
         float grossPay;
 
+        grossPay = getGrossPay(hoursWorked, payRate);
+
+        System.out.printf("%s worked %.2f hrs. Gross pay is $%.2f", employeeName, hoursWorked, grossPay);
+
+
+    }
+
+    private static float getGrossPay(float hoursWorked, float payRate) {
+        float grossPay;
         if (hoursWorked > 40)
         {
             float overTime = hoursWorked - 40;
@@ -26,9 +35,6 @@ public class PayrollCalculator {
         {
             grossPay = hoursWorked * payRate;
         }
-
-        System.out.printf("%s worked %.2f hrs. Gross pay is $%.2f", employeeName, hoursWorked, grossPay);
-
-
+        return grossPay;
     }
 }
